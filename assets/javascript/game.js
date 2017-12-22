@@ -176,8 +176,10 @@ function chooseDefender () {
 //Player attack to win or lose
 function attackDefender () {
 
+
 		$(".fight").html("<button type='button' class='btn btn-default btn-lg' id='attackMove'><span class='glyphicon glyphicon-knight' aria-hidden='true'></span> Attack This Opponent</button>");
 		$(".btn").on("click", function () {
+
 			console.log("kicking ass");
 			playerHP = playerHP - defender.defendPower;
 			$("#playerHealth").html("Health: " + playerHP);
@@ -188,7 +190,22 @@ function attackDefender () {
 
 			if (defenderHP <=0) {
 
-				if (enemies.length > 1) {
+				var defeatedEnemies = enemies.indexOf(defender);
+				enemies.splice(defeatedEnemies, 1);
+				console.log(enemies);
+
+				if (enemies.length == 0) {
+					console.log("This is working now. ");
+					$("#playerHealth").html("You have defeated all of your opponents <br> and are now Supreme Ruler of the galaxy!");
+					$(".two").hide();
+					$(".three").hide();
+
+					resetGame ();
+
+				}
+
+				else {
+
 					$("#defender").attr("id", "defeated");
 					$(".defeated").append($("#defeated"));
 					$(".defeated").hide();
@@ -197,36 +214,10 @@ function attackDefender () {
 					$("#defenderAttackPower").empty();
 					console.log("choose another defender");
 					defender = "no defender selected";
-					$("#try-again").hide ();
-					$("#attackMove").hide ();
-
+					$("#try-again").hide();
+					$("#attackMove").hide();
 				}
 
-
-				
-				// else if (enemies.length == 1) {
-				// 	$("#defender").attr("id", "defeated");
-				// 	$(".defeated").append($("#defeated"));
-				// 	$(".defeated").hide();
-				// 	$("#playerDefenderTitle").html("You defeated " + defender.name + " !");
-
-				// 	$("#defenderHealth").empty();
-				// 	$("#defenderAttackPower").empty();
-				// 	console.log("no more defenders to choose");
-				// 	defender = "no defender selected";
-				// 	$("#try-again").hide ();
-				// }
-
-				// else if (enemies = []) {
-				// 	console.log("no defenders left");
-				// 	$("#playerEnemiesTitle").hide();
-				// 	$("#playerDefenderTitle").html("You defeated " + defender.name + " !");
-				// 	resetGame ();
-				// }
-
-				else {
-					console.log("This is pretty convoluted.");
-				}
 
 			}
 			
