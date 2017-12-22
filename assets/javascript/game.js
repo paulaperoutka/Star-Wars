@@ -192,7 +192,7 @@ function attackDefender () {
 					$("#defender").attr("id", "defeated");
 					$(".defeated").append($("#defeated"));
 					$(".defeated").hide();
-					$("#playerDefenderTitle").html("You defeated " + defender.name + " ! <br> Choose another opponent.");
+					$("#playerDefenderTitle").html("You defeated " + defender.name + " !");
 					$("#defenderHealth").empty();
 					$("#defenderAttackPower").empty();
 					console.log("choose another defender");
