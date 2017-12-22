@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Star Wars Game</title> 
+
+<!-- Latest compiled and minified CSS-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Link google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+	
+<!-- Link stylesheet -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+	<wrapper>
+<!-- Title Bar -->
+		<div class="header">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Star Wars: Balance the Force</h1>
+				</div>
+			</div>
+		</div>
+<!-- Player Character Selection -->
+		<div class="row one">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 id="playerCharacterTitle">Choose a character</h2>
+					</div>
+				</div>
+
+				<div class="row playerCharacter">
+					<div class="col-md-12">
+						<a href="#" class="thumbnail pull-left" id="yoda">
+				      <img src="assets/images/yoda.jpg" alt="Yoda">
+				    </a>
+					
+						<a href="#" class="thumbnail pull-left" id="jyn">
+				      <img src="assets/images/jyn-erso.png" alt="Jyn Erso">
+				    </a>
+					
+						<a href="#" class="thumbnail pull-left" id="lando">
+				      <img src="assets/images/lando-calrissian-2.jpg" alt="Lando Calrissian">
+				    </a>
+					
+						<a href="#" class="thumbnail pull-left" id="count">
+				      <img src="assets/images/count-dooku.jpg" alt="Count Dooku">
+		    		</a>
+		    		<h4 id="playerHealth"></h4>
+		    		<h4 id="playerAttackPower"></h4>
+		    		<div id="replay"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!-- Defender Selection -->
+		<div class="row two">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Defender -->
+						<h2 id="playerDefenderTitle"></h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="playerDefender"></div>
+						<h4 id="defenderHealth"></h4>
+		    		<h4 id="defenderAttackPower"></h4>
+		    		<div class="fight"></div>
+					</div>
+				</div>
+			</div>
+		</div>	
+
+<!-- Enemies Available to Attack -->
+		<div class="row three">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 id="playerEnemiesTitle"></h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 playerEnemies">
+	
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row four">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 id="defeatedDefendersTitle"></h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 defeated">
+					</div>
+			</div>
+		</div>
+
+				
+			</div>
+		</div>
+
+
+
+		<div class="row gameEnd">
+			<div class="col-md-12">
+				
+			</div>
+		</div>
+
+	</wrapper>
+
+<!--  -->
+
+<!-- Link jQuery library-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- Link game javascript -->
+	<script src="assets/javascript/game.js"></script>
+
+</body>
+</html>
+
