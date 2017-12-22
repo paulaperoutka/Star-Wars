@@ -1,5 +1,8 @@
 $(document).ready(
+
 function() {
+
+$("#backgroundMusic").prop("volume", 0.05);
 
 
 // Assign Characters as game objects, define properties
@@ -185,6 +188,10 @@ function attackDefender () {
 			$("#playerHealth").html("Health: " + playerHP);
 			defenderHP = defenderHP -playerCharacter.attackPower;
 			$("#defenderHealth").html("Health: " + defenderHP);
+			playerAttackPower = playerAttackPower + playerCharacter.attackPower;
+			$("#playerAttackPower").html("Attack Power: " + playerAttackPower);
+			defenderAttackPower = defenderAttackPower + defender.attackPower;
+			$("#defenderAttackPower").html("Attack Power: " + defenderAttackPower);
 			console.log(playerHP);
 			console.log(defenderHP);
 
@@ -238,8 +245,6 @@ function attackDefender () {
 //Reset the game once player wins or loses
 function resetGame () {
 	$("#attackMove").hide ();
-	// $("#playerAttackPower").hide ();
-	// $("#playerHealth").html("You were defeated and are now a force ghost! <br> Click to replay.");
 	$("#playerAttackPower").html("Click to replay.");
 	$("#replay").html("<button type='button' class='btn btn-default btn-lg' id='try-again'><span class='glyphicon glyphicon-knight' aria-hidden='true'></span> Play Again</button>");
 			$(".btn").on("click", function () {	
