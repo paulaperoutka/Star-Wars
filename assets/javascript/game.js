@@ -32,7 +32,7 @@ $("#backgroundMusic").prop("volume", 0.05);
 
 	var char4 = {
 		name: "Count Dooku",
-		hp: 72,
+		hp: 83,
 		attackPower: 7,
 		defendPower: 5,
 	}
