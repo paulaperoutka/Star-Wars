@@ -186,7 +186,7 @@ function attackDefender () {
 			console.log("kicking ass");
 			playerHP = playerHP - defender.defendPower;
 			$("#playerHealth").html("Health: " + playerHP);
-			defenderHP = defenderHP -playerCharacter.attackPower;
+			defenderHP = defenderHP - playerAttackPower;
 			$("#defenderHealth").html("Health: " + defenderHP);
 			playerAttackPower = playerAttackPower + playerCharacter.attackPower;
 			$("#playerAttackPower").html("Attack Power: " + playerAttackPower);
