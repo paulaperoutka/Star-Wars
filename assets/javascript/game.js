@@ -63,7 +63,7 @@ $("#backgroundMusic").prop("volume", 0.05);
 	var that;
 
 
-//Capture player choice for game character
+//Capture player choice for game character; assign id player 
 function chooseCharacter () {
 
 	var playerCharacterId = that.id;
@@ -93,7 +93,7 @@ function chooseCharacter () {
 
 		console.log(playerCharacter);
 
-
+// for loop to determine which character is player, push other characters to enemies array
 		for (i=0; i<characters.length; i++) {
 			if (characters[i] === playerCharacter) {
 				console.log(playerCharacter);
@@ -107,6 +107,7 @@ function chooseCharacter () {
 		
 		console.log(enemies);
 
+// Update page to display player character, enemies, html, move thumbnails to assigned columns
 		$("#playerCharacterTitle").html("You are" + " " + playerCharacter.name);
 		$("#playerEnemiesTitle").html("Now choose your opponent.");
 		$(".thumbnail").not(that).appendTo(".playerEnemies");
@@ -124,12 +125,12 @@ function chooseCharacter () {
 //Capture player choice for defender(s)
 function chooseDefender () {
 
-
+// Prevent selection of player characters as defender
 	if (that.id == "player") {
 		console.log("That is already your Player Character.");
 	}
 
-
+//Choose defender and assign id defender
 	else {
 
 		var defenderId = that.id;
@@ -159,6 +160,7 @@ function chooseDefender () {
 
 		console.log(defender);
 
+//Update HTML for defender info and print stats to page
 			// $("#playerCharacterTitle").html("May the force be with you," + " " + playerCharacter.name + ".");
 			$("#playerCharacterTitle").html("May the force be with you.");
 			$("#playerEnemiesTitle").html("Enemies Still to Defeat");
@@ -169,7 +171,7 @@ function chooseDefender () {
 			$("#defenderAttackPower").html("Attack Power: " + defenderAttackPower);
 			attackDefender ();
 	}
-
+//If user does not select a thumbnail from the correct column
 	$("#playerDefenderTitle").html("Your opponent is" + " " + (defender.name || "not selected. Choose from the list below") + ".");
 
 //close chooseDefender function
@@ -179,7 +181,7 @@ function chooseDefender () {
 //Player attack to win or lose
 function attackDefender () {
 
-
+//Button to start attack, change health points, attack & defend power
 		$(".fight").html("<button type='button' class='btn btn-default btn-lg' id='attackMove'><span class='glyphicon glyphicon-knight' aria-hidden='true'></span> Attack This Opponent</button>");
 		$(".btn").on("click", function () {
 
@@ -195,12 +197,14 @@ function attackDefender () {
 			console.log(playerHP);
 			console.log(defenderHP);
 
+//if the player wins match, push defender to defeated category
 			if (defenderHP <=0) {
 
 				var defeatedEnemies = enemies.indexOf(defender);
 				enemies.splice(defeatedEnemies, 1);
 				console.log(enemies);
 
+	//sub-if: if player wins all matches no defenders left to attack
 				if (enemies.length == 0) {
 					console.log("This is working now. ");
 					$("#playerHealth").html("You have defeated all of your opponents <br> and are now Supreme Ruler of the galaxy!");
@@ -210,7 +214,7 @@ function attackDefender () {
 					resetGame ();
 
 				}
-
+	//sub-else: if player still has defenders to attack
 				else {
 
 					$("#defender").attr("id", "defeated");
@@ -227,7 +231,7 @@ function attackDefender () {
 
 
 			}
-			
+//if player loses to defender
 			else {
 				if (playerHP <= 0){
 						$("#playerHealth").html("You were defeated and are now a force ghost!");
@@ -253,6 +257,7 @@ function resetGame () {
 //close resetGame function	
 }
 
+//function the boot up game, prompt user for player character and defenders
 function playGame () {
 	//Start the game
 	$(".thumbnail").on('click', function () {
