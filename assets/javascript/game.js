@@ -168,7 +168,7 @@ function chooseDefender () {
 			defenderHP = defender.hp;
 			$("#defenderHealth").html("Health: " + defenderHP);
 			defenderAttackPower = defender.attackPower;
-			$("#defenderAttackPower").html("Attack Power: " + defenderAttackPower);
+			$("#defenderAttackPower").html("Defense Power: " + defenderAttackPower);
 			attackDefender ();
 	}
 //If user does not select a thumbnail from the correct column
@@ -193,7 +193,7 @@ function attackDefender () {
 			playerAttackPower = playerAttackPower + playerCharacter.attackPower;
 			$("#playerAttackPower").html("Attack Power: " + playerAttackPower);
 			defenderAttackPower = defenderAttackPower + defender.attackPower;
-			$("#defenderAttackPower").html("Attack Power: " + defenderAttackPower);
+			$("#defenderAttackPower").html("Defense Power: " + defenderAttackPower);
 			console.log(playerHP);
 			console.log(defenderHP);
 
